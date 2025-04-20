@@ -1,15 +1,25 @@
+# GoF Design Patterns in Go
+
+This repository contains examples of the **Gang of Four (GoF)** design patterns implemented in **Go (Golang)**. Each pattern is written with clarity and educational purpose in mind, including:
+
+- Explanation of the pattern's concept
+- Common use cases
+- Real-world analogies
+- Example implementation in Go
+
+understand **when**, **why**, and **how** to apply these classic design patterns in practical software development.
+
 ```
 design-patterns-go/
 │
 ├── README.md
 ├── go.mod
-├── go.sum
 │
 ├── creational/
-│   ├── abstract_factory/
+│   ├── abstractfactory/
 │   ├── builder/
 │   ├── prototype/
-│   ├── singleton/
+│   └── singleton/
 │
 ├── structural/
 │   ├── adapter/
@@ -18,16 +28,20 @@ design-patterns-go/
 │   ├── decorator/
 │   ├── facade/
 │   ├── flyweight/
-│   ├── proxy/
+│   └── proxy/
 │
 ├── behavioral/
-│   ├── chain_of_responsibility/
+│   ├── chainofresponsibility/
 │   ├── command/
 │   ├── iterator/
 │   ├── mediator/
 │   ├── memento/
 │   ├── observer/
-│   ├── visitor/
+│   └── visitor/
 │
 └── main.go
 ```
+
+## References
+
+- [Design Patterns: Elements of Reusable Object-Oriented Software](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612) by Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides

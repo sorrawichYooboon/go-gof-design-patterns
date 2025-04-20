@@ -17,6 +17,15 @@ import (
 	"github.com/sorrawichYooboon/go-gof-design-patterns/structural/facade"
 	"github.com/sorrawichYooboon/go-gof-design-patterns/structural/flyweight"
 	"github.com/sorrawichYooboon/go-gof-design-patterns/structural/proxy"
+
+	// Behavioral Patterns
+	"github.com/sorrawichYooboon/go-gof-design-patterns/behavioral/chainofresponsibility"
+	"github.com/sorrawichYooboon/go-gof-design-patterns/behavioral/command"
+	"github.com/sorrawichYooboon/go-gof-design-patterns/behavioral/iterator"
+	"github.com/sorrawichYooboon/go-gof-design-patterns/behavioral/mediator"
+	"github.com/sorrawichYooboon/go-gof-design-patterns/behavioral/memento"
+	"github.com/sorrawichYooboon/go-gof-design-patterns/behavioral/observer"
+	"github.com/sorrawichYooboon/go-gof-design-patterns/behavioral/visitor"
 )
 
 func main() {
@@ -25,6 +34,9 @@ func main() {
 
 	fmt.Println("\n=== Structural Patterns ===")
 	runStructuralPatterns()
+
+	fmt.Println("\n=== Behavioral Patterns ===")
+	runBehavioralPatterns()
 }
 
 func runCreationalPatterns() {
@@ -62,4 +74,27 @@ func runStructuralPatterns() {
 
 	fmt.Println("\n--- Proxy ---")
 	proxy.ExecuteProxyPattern()
+}
+
+func runBehavioralPatterns() {
+	fmt.Println("\n--- Chain of Responsibility ---")
+	chainofresponsibility.ExecuteChainOfResponsibilityPattern()
+
+	fmt.Println("\n--- Command ---")
+	command.ExecuteCommandPattern()
+
+	fmt.Println("\n--- Iterator ---")
+	iterator.ExecuteIteratorPattern()
+
+	fmt.Println("\n--- Mediator ---")
+	mediator.ExecuteMediatorPattern()
+
+	fmt.Println("\n--- Memento ---")
+	memento.ExecuteMementoPattern()
+
+	fmt.Println("\n--- Observer ---")
+	observer.ExecuteObserverPattern()
+
+	fmt.Println("\n--- Visitor ---")
+	visitor.ExecuteVisitorPattern()
 }
