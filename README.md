@@ -10,7 +10,6 @@ This repository contains examples of the **Gang of Four (GoF)** design patterns 
 understand **when**, **why**, and **how** to apply these classic design patterns in practical software development.
 
 ```
-design-patterns-go/
 │
 ├── README.md
 ├── go.mod
