@@ -1,6 +1,9 @@
 package singleton
 
-import "sync"
+import (
+	"fmt"
+	"sync"
+)
 
 /*
 ==============================
@@ -35,4 +38,13 @@ func GetInstance() *singleton {
 		instance = &singleton{Message: "I am the only one!"}
 	})
 	return instance
+}
+
+// Usage
+func ExecuteSingletonPattern() {
+	instance1 := GetInstance()
+	instance2 := GetInstance()
+
+	fmt.Println("Singleton Message from instance1:", instance1.Message)
+	fmt.Println("Are instance1 and instance2 the same?", instance1 == instance2)
 }

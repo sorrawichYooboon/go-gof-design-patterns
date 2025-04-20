@@ -3,33 +3,63 @@ package main
 import (
 	"fmt"
 
+	// Creational Patterns
 	"github.com/sorrawichYooboon/go-gof-design-patterns/creational/abstractfactory"
 	"github.com/sorrawichYooboon/go-gof-design-patterns/creational/builder"
 	"github.com/sorrawichYooboon/go-gof-design-patterns/creational/prototype"
 	"github.com/sorrawichYooboon/go-gof-design-patterns/creational/singleton"
+
+	// Structural Patterns
+	"github.com/sorrawichYooboon/go-gof-design-patterns/structural/adapter"
+	"github.com/sorrawichYooboon/go-gof-design-patterns/structural/bridge"
+	"github.com/sorrawichYooboon/go-gof-design-patterns/structural/composite"
+	"github.com/sorrawichYooboon/go-gof-design-patterns/structural/decorator"
+	"github.com/sorrawichYooboon/go-gof-design-patterns/structural/facade"
+	"github.com/sorrawichYooboon/go-gof-design-patterns/structural/flyweight"
+	"github.com/sorrawichYooboon/go-gof-design-patterns/structural/proxy"
 )
 
 func main() {
-	fmt.Println("== Creational Patterns ==")
+	fmt.Println("=== Creational Patterns ===")
+	runCreationalPatterns()
 
-	// Abstract Factory Pattern: Creates families of related objects
-	uiFactory := abstractfactory.GetUIFactory("mac")
-	button := uiFactory.CreateButton()
-	checkbox := uiFactory.CreateCheckbox()
-	button.Paint()
-	checkbox.Paint()
+	fmt.Println("\n=== Structural Patterns ===")
+	runStructuralPatterns()
+}
 
-	// Builder Pattern: Constructs complex objects step by step
-	director := builder.NewDirector(&builder.ConcreteBuilder{})
-	product := director.Construct()
-	fmt.Println("Builder result:", product.PartA, "+", product.PartB)
+func runCreationalPatterns() {
+	fmt.Println("\n--- Abstract Factory ---")
+	abstractfactory.ExecuteAbstractFactoryPattern()
 
-	// Prototype Pattern: Clones an existing object
-	original := &prototype.ConcretePrototype{Value: "original"}
-	clone := original.Clone()
-	fmt.Println("Prototype clone value:", clone.GetValue())
+	fmt.Println("\n--- Builder ---")
+	builder.ExecuteBuilderPattern()
 
-	// Singleton Pattern: Ensures a class has only one instance
-	s := singleton.GetInstance()
-	fmt.Println("Singleton message:", s.Message)
+	fmt.Println("\n--- Prototype ---")
+	prototype.ExecutePrototypePattern()
+
+	fmt.Println("\n--- Singleton ---")
+	singleton.ExecuteSingletonPattern()
+}
+
+func runStructuralPatterns() {
+	fmt.Println("\n--- Adapter ---")
+	adapter.ExecuteAdapterPattern()
+
+	fmt.Println("\n--- Bridge ---")
+	bridge.ExecuteBridgePattern()
+
+	fmt.Println("\n--- Composite ---")
+	composite.ExecuteCompositePattern()
+
+	fmt.Println("\n--- Decorator ---")
+	decorator.ExecuteDecoratorPattern()
+
+	fmt.Println("\n--- Facade ---")
+	facade.ExecuteFacadePattern()
+
+	fmt.Println("\n--- Flyweight ---")
+	flyweight.ExecuteFlyweightPattern()
+
+	fmt.Println("\n--- Proxy ---")
+	proxy.ExecuteProxyPattern()
 }

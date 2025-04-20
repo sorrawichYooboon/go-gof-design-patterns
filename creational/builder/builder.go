@@ -1,5 +1,7 @@
 package builder
 
+import "fmt"
+
 /*
 ==============================
 Builder Design Pattern
@@ -59,4 +61,16 @@ func (d *Director) Construct() Product {
 	d.builder.BuildPartA()
 	d.builder.BuildPartB()
 	return d.builder.GetResult()
+}
+
+// Usage
+func ExecuteBuilderPattern() {
+	builder := &ConcreteBuilder{}
+	director := NewDirector(builder)
+
+	product := director.Construct()
+
+	fmt.Println("Product built with:")
+	fmt.Println("- PartA:", product.PartA)
+	fmt.Println("- PartB:", product.PartB)
 }

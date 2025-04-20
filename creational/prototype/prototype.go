@@ -1,5 +1,7 @@
 package prototype
 
+import "fmt"
+
 /*
 ==============================
 Prototype Design Pattern
@@ -36,4 +38,13 @@ func (p *ConcretePrototype) Clone() Prototype {
 
 func (p *ConcretePrototype) GetValue() string {
 	return p.Value
+}
+
+// Usage
+func ExecutePrototypePattern() {
+	original := &ConcretePrototype{Value: "Original Object"}
+	clone := original.Clone()
+
+	fmt.Println("Original Value:", original.GetValue())
+	fmt.Println("Cloned Value:  ", clone.GetValue())
 }

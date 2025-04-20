@@ -85,3 +85,20 @@ type WinCheckbox struct{}
 func (c *WinCheckbox) Paint() {
 	fmt.Println("Rendering Windows Checkbox")
 }
+
+// Usage
+func ExecuteAbstractFactoryPattern() {
+	fmt.Println("Client: Testing client code with the Windows factory type:")
+	winFactory := GetUIFactory("win")
+	button1 := winFactory.CreateButton()
+	checkbox1 := winFactory.CreateCheckbox()
+	button1.Paint()
+	checkbox1.Paint()
+
+	fmt.Println("Client: Testing client code with the Mac factory type:")
+	macFactory := GetUIFactory("mac")
+	button2 := macFactory.CreateButton()
+	checkbox2 := macFactory.CreateCheckbox()
+	button2.Paint()
+	checkbox2.Paint()
+}
